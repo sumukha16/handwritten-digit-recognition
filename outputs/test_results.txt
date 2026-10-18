@@ -1,0 +1,30 @@
+=== Handwritten Digit Recognition: Test Case Results ===
+
+TC1: Image labelled digit 7
+  digit7_1.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  Result: PASS
+
+TC2: Image labelled digit 3
+  digit3_1.png: Actual = 3, Predicted = 3 (confidence 51.9%)
+  Result: PASS
+
+TC3: Image with wrong dimensions (200x150, resized to 28x28)
+  wrong_size.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  Result: PASS
+
+TC4: Colour image (converted to grayscale)
+  colour_image.png: Actual = 3, Predicted = 3 (confidence 47.9%)
+  Result: PASS
+
+TC5: Corrupted / unreadable image
+  corrupted.png: ERROR - Could not read 'test_inputs/corrupted.png': the file is corrupted or is not a valid image.
+  Result: PASS
+
+TC6: Multiple images (6 images, one prediction each)
+  digit3_1.png: Actual = 3, Predicted = 3 (confidence 51.9%)
+  digit3_2.png: Actual = 3, Predicted = 3 (confidence 100.0%)
+  digit3_3.png: Actual = 3, Predicted = 3 (confidence 100.0%)
+  digit7_1.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  digit7_2.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  digit7_3.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  Result: PASS
