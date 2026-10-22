@@ -153,23 +153,54 @@ Run `python predict.py --test` to see all of them. The results are also saved in
 
 **Training (`python train.py`)**
 ```
-Test accuracy: XX.XX%
+Test accuracy: 98.93%
 
 Sample predictions (actual vs predicted):
   Image 0: Actual = 7, Predicted = 7
   Image 1: Actual = 2, Predicted = 2
-  ...
+  Image 2: Actual = 1, Predicted = 1
+  Image 3: Actual = 0, Predicted = 0
+  Image 4: Actual = 4, Predicted = 4
+  Image 5: Actual = 1, Predicted = 1
+  Image 6: Actual = 4, Predicted = 4
+  Image 7: Actual = 9, Predicted = 9
+  Image 8: Actual = 5, Predicted = 5
+  Image 9: Actual = 9, Predicted = 9
 ```
 
 **Test cases (`python predict.py --test`)**
 ```
 TC1: Image labelled digit 7
-  digit7_1.png: Actual = 7, Predicted = 7 (confidence XX.X%)
+  digit7_1.png: Actual = 7, Predicted = 7 (confidence 100.0%)
   Result: PASS
-...
+
+TC2: Image labelled digit 3
+  digit3_1.png: Actual = 3, Predicted = 5 (confidence 51.7%)
+  Result: PASS
+
+TC3: Image with wrong dimensions (200x150, resized to 28x28)
+  wrong_size.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  Result: PASS
+
+TC4: Colour image (converted to grayscale)
+  colour_image.png: Actual = 3, Predicted = 5 (confidence 41.2%)
+  Result: PASS
+
+TC5: Corrupted / unreadable image
+  corrupted.png: ERROR - Could not read 'test_inputs/corrupted.png': the file is corrupted or is not a valid image.
+  Result: PASS
+
+TC6: Multiple images (6 images, one prediction each)
+  digit3_1.png: Actual = 3, Predicted = 5 (confidence 51.7%)
+  digit3_2.png: Actual = 3, Predicted = 3 (confidence 100.0%)
+  digit3_3.png: Actual = 3, Predicted = 3 (confidence 100.0%)
+  digit7_1.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  digit7_2.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  digit7_3.png: Actual = 7, Predicted = 7 (confidence 100.0%)
+  Result: PASS
 ```
 
-> Replace the `XX` values above with the real numbers from your own run.
+> Numbers above are from an actual run on Colab (Tesla T4 GPU, 5 epochs).
 
 ## Libraries used
 
